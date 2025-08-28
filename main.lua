@@ -6,6 +6,15 @@ function love.load()
   x, y, w, h = 0, 0 , 60 , 20
 end
 
+-- quando precionado alguma tecla
+function love.keypressed(key, scancode, isrepeat)
+  player:keypressed(scancode)
+end
+
+-- quando solta alguma tecla
+function love.keyreleased(key, scancode)
+  player:keyreleased(scancode)
+end
 
 -- atualiza a cada quadro
 function love.update(dt)
