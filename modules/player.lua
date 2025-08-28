@@ -1,7 +1,7 @@
 Player = {}
 Player.__index = Player
 
-function Player:new(x,y)
+function Player:new(world, x,y)
   local object = {
     x = x,
     y = y, 
@@ -11,7 +11,14 @@ function Player:new(x,y)
     w = 8,
     h = 8,
   }
+
   setmetatable(object, Player)
+  -- Cria corpo
+  object.body = love.physics.newBody(world, x, y, "dynamic")
+  object.shape = love.physics.newRectangleShape(object.w, object.h)
+  object.fixture = love.physics.newFixture(object.body, object.shape, 1)
+  object.body:setFixedRotation(true)
+
   return object
 end
 
