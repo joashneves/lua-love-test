@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 local Player = require("modules.player")
-local Tiro = require("modules.tiro")
+
 -- Quando começa o jogo
 function love.load()
   love.physics.setMeter(64)                 -- tamanho do “metro” em pixels
