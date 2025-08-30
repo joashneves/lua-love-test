@@ -9,23 +9,12 @@ function love.load()
   player = Player:new(world, 100, 100)
 end
 
--- Quando precionado alguma tecla
-function love.keypressed(key, scancode, isrepeat)
-  player:keypressed(scancode)
-end
-
--- Quando solta alguma tecla
-function love.keyreleased(key, scancode)
-  player:keyreleased(scancode)
-end
-
 -- Atualiza a cada quadro
 function love.update(dt)
   world:update(dt)
   player:update(dt)
   
 end
-
 
 -- Redenriza na tela
 function love.draw()

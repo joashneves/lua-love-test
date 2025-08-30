@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 Player = {}
 Player.__index = Player
 
@@ -47,6 +49,15 @@ function Player:keyreleased(scancode)
     end
 end
 
+-- Quando precionado alguma tecla
+function love.keypressed(key, scancode, isrepeat)
+  player:keypressed(scancode)
+end
+
+-- Quando solta alguma tecla
+function love.keyreleased(key, scancode)
+  player:keyreleased(scancode)
+end
 
 function Player:draw()
   love.graphics.setColor(1, 0.8, 0.2)
